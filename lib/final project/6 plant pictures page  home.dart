@@ -1,7 +1,7 @@
 import 'package:akeproject/final%20project/7%20model.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import '6 plant details.dart';
+import '6 plant card.dart';
 import '7 provider.dart';
 import '7 wishlist.dart';
 
@@ -12,7 +12,12 @@ void main() {
 }
 
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -185,7 +190,7 @@ class _PlantListState extends State<PlantList> {
     );
   }
 }
-
+/*
 class PlantCard extends StatelessWidget {
   final String name;
   final double price;
@@ -267,8 +272,9 @@ class PlantCard extends StatelessWidget {
       ),
     );
   }
-}
-class PlantDetailsPage extends StatelessWidget {
+}*/
+/*
+class PlantDetailsPage extends StatefulWidget {
   final String name;
   final double price;
   final String image;
@@ -292,6 +298,12 @@ class PlantDetailsPage extends StatelessWidget {
   });
 
   @override
+  State<PlantDetailsPage> createState() => _PlantDetailsPageState();
+}
+
+class _PlantDetailsPageState extends State<PlantDetailsPage> {
+  List<String> wishlist = [];
+  @override
   Widget build(BuildContext context) {
      var movies = context.watch<MovieProvider>().movies;
     // //movies-home pagele list
@@ -299,10 +311,10 @@ class PlantDetailsPage extends StatelessWidget {
      //movielist-
     return Scaffold(
         appBar: AppBar(
-          title: Text(name),
+          title: Text(widget.name),
         ),
         body:
-        /*ListView.builder(itemBuilder: (context, index) {
+        *//*ListView.builder(itemBuilder: (context, index) {
           var movie = movies[index];
           return Card(
             key: ValueKey(movie.title),
@@ -324,40 +336,40 @@ class PlantDetailsPage extends StatelessWidget {
               ),
             ),
           );
-        }),*/Column(mainAxisAlignment: MainAxisAlignment.center, children: [
+        }),*//*Column(mainAxisAlignment: MainAxisAlignment.center, children: [
           Image.network(
-            image,
+            widget.image,
             width: 250,
             height: 300,
             fit: BoxFit.cover,
           ),
           SizedBox(height: 16),
-          Text(name, style: TextStyle(fontSize: 24)),
+          Text(widget.name, style: TextStyle(fontSize: 24)),
           SizedBox(height: 8),
-          Text('\$$price', style: TextStyle(fontSize: 18)),
+          Text('\$${widget.price}', style: TextStyle(fontSize: 18)),
           Text(
-            scientificname,
+            widget.scientificname,
             style: TextStyle(fontSize: 15),
           ),
-          Text(details, style: TextStyle(fontSize: 16)),
+          Text(widget.details, style: TextStyle(fontSize: 16)),
           SizedBox(height: 30),
           Row(mainAxisAlignment: MainAxisAlignment.center, children: [
             IconButton(
               icon: Icon(
-                isInCart ? Icons.shopping_cart : Icons.add_shopping_cart,
-                color: isInCart ? Colors.blue : null,
+                widget.isInCart ? Icons.shopping_cart : Icons.add_shopping_cart,
+                color: widget.isInCart ? Colors.blue : null,
               ),
-              onPressed: onToggleCart,
+              onPressed: widget.onToggleCart,
             ),
             IconButton(
               icon: Icon(
-                isWishlist ? Icons.favorite : Icons.favorite_border,
-                color: isWishlist ? Colors.red : null,
+                widget.isWishlist ? Icons.favorite : Icons.favorite_border,
+                color: widget.isWishlist ? Colors.red : null,
               ),
-              onPressed: onToggleWishlist,
+              onPressed: widget.onToggleWishlist,
             )
           ]),
-          Padding(
+            Padding(
             padding: const EdgeInsets.only(top: 50),
             child: ElevatedButton.icon(
                 onPressed: () {
@@ -366,8 +378,10 @@ class PlantDetailsPage extends StatelessWidget {
                       MaterialPageRoute(
                           builder: (context) => providerwishlist()));},
                 icon: Icon(Icons.favorite),
-                label: Text("Go to wishlist ${movielist.length}")),
+              label:
+              //Text( onToggleWishlist.(plants[index])? "Remove":"Add",style: TextStyle(color: Colors.black),),
+                Text("Go to wishlist ${movielist.length}")),
           ),
         ]));
   }
-}
+}*/

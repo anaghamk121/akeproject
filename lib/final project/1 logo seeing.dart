@@ -1,19 +1,25 @@
 import 'dart:async';
-import 'package:device_preview/device_preview.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.darT';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
+import 'package:hive/hive.dart';
+import 'package:hive_flutter/adapters.dart';
 import '2 get started.dart';
+import '3 login model.dart';
 
-void main() {
+void main()async  {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Hive.initFlutter();
+  Hive.registerAdapter(UserAdapter() as TypeAdapter);
+  Hive.openBox<User>('user');
+  await Hive.openBox('task_box');
   runApp(
-      DevicePreview(
-      builder: (BuildContext context) => GetMaterialApp(
-            useInheritedMediaQuery: true,
-            debugShowCheckedModeBanner: false,
+      GetMaterialApp(
+            // useInheritedMediaQuery: true,
+            // debugShowCheckedModeBanner: false,
             home: photo(),
             theme: ThemeData(),
-          )));
+          ));
 }
 
 class photo extends StatefulWidget {

@@ -2,6 +2,8 @@ import 'package:convex_bottom_bar/convex_bottom_bar.dart';
 import 'package:device_preview/device_preview.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:hive/hive.dart';
+import 'package:hive_flutter/adapters.dart';
 import '10 Account .dart';
 import '11 review page.dart';
 import '12 notification page.dart';
@@ -9,16 +11,20 @@ import '6 plant pictures page  home.dart';
 import '7 wishlist.dart';
 import '8 cart page.dart';
 import '9 tools page.dart';
-/*
-void main() {
-  runApp(DevicePreview(
-      builder: (BuildContext context) => MaterialApp(
-            useInheritedMediaQuery: true,
-            debugShowCheckedModeBanner: false,
-            home:
-            mainscreen(),
-      )));
-}*/
+//
+// void main() async {
+//   WidgetsFlutterBinding.ensureInitialized();
+//
+//   /// hive initialisation
+//   await Hive.initFlutter();
+//   await Hive.openBox('task_box');
+//   runApp(MaterialApp(
+//         useInheritedMediaQuery: true,
+//         debugShowCheckedModeBanner: false,
+//         home:
+//         mainscreen(),
+//   ));
+// }
 
 class mainscreen extends StatefulWidget {
   @override
@@ -29,9 +35,9 @@ class _mainscreenState extends State<mainscreen> {
   var screen=[
     HomePage(),
     tools(),
-    review(),
-    cart(),
-  //  profile(),
+    //review(),
+    //cart(),
+  //profile(),
   ];
    int index=1;
   @override
@@ -108,7 +114,7 @@ class _mainscreenState extends State<mainscreen> {
         )
         )]),
         bottomNavigationBar: BottomNavigationBar(
-          backgroundColor: Colors.green,
+          backgroundColor: Colors.green[700],
           type: BottomNavigationBarType.shifting,
           selectedItemColor: Colors.blueGrey,
           unselectedItemColor: Colors.black12,
@@ -124,18 +130,14 @@ class _mainscreenState extends State<mainscreen> {
             {Navigator.push(context, MaterialPageRoute(builder: (BuildContext context)=>HomePage()));},
               icon:Icon( Icons.home_rounded),),label: "home",
                 backgroundColor: Colors.green),
-            BottomNavigationBarItem(icon: IconButton(onPressed: (){},
-          //  {Navigator.push(context, MaterialPageRoute(builder: (BuildContext context)=>HomePage()));},
-              icon:Icon( Icons.water_drop_outlined),),label: "Tools",
-                backgroundColor: Colors.teal),
             BottomNavigationBarItem(icon: IconButton(onPressed: ()
             {Navigator.push(context, MaterialPageRoute(builder: (BuildContext context)=> review()));},
               icon:Icon( Icons.add),),label: "Review",
                 backgroundColor: Colors.green),
-            BottomNavigationBarItem(icon: IconButton(onPressed: ()
+          /*  BottomNavigationBarItem(icon: IconButton(onPressed: ()
             {Navigator.push(context, MaterialPageRoute(builder: (BuildContext context)=>cart()));},
               icon:Icon( Icons.shopping_cart),),label: "Cart",
-                backgroundColor: Colors.green),
+                backgroundColor: Colors.green),*/
             BottomNavigationBarItem(icon: IconButton(onPressed: ()
             {Navigator.push(context, MaterialPageRoute(builder: (BuildContext context)=>Profile()));},
               icon:Icon( Icons.account_circle),),label: "Profile",

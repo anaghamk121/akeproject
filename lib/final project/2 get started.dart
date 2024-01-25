@@ -3,17 +3,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.darT';
 
 import '2 getstart button.dart';
-/*
-void main() {
-  runApp(
-      //DevicePreview(
-      // builder: (BuildContext context) =>
-      MaterialApp(
-    useInheritedMediaQuery: true,
-    debugShowCheckedModeBanner: false,
-    home: start(),
-  ));
-}*/
 
 class start extends StatelessWidget {
   start({super.key});

@@ -7,18 +7,16 @@ import '3 login database.dart';
 import '3 login model.dart';
 import '4 registration page.dart';
 import '5 Homepage.dart';
-
-/*
-void main() async{
-  WidgetsFlutterBinding.ensureInitialized();
-  await Hive.initFlutter();
-  Hive.registerAdapter(UserAdapter() as TypeAdapter);
-  Hive.openBox<User>('user');
-  runApp(GetMaterialApp(
-    home: projlogin(),
-  ));
-}
-*/
+//
+// void main() async {
+//   WidgetsFlutterBinding.ensureInitialized();
+//   await Hive.initFlutter();
+//   Hive.registerAdapter(UserAdapter() as TypeAdapter);
+//   Hive.openBox<User>('user');
+//   runApp(GetMaterialApp(
+//     home: projlogin(),
+//   ));
+// }
 
 class projlogin extends StatefulWidget {
   @override
@@ -72,11 +70,9 @@ class _projloginState extends State<projlogin> {
                       }
                     });
                   },
-                  icon: Icon(
-                      hidepass == true
+                  icon: Icon(hidepass == true
                       ? Icons.visibility_off
-                      : Icons.visibility
-                  ),
+                      : Icons.visibility),
                 ),
                 labelText: "Email",
                 hintText: "Email",

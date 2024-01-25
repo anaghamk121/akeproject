@@ -2,18 +2,18 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.darT';
 import 'package:hive/hive.dart';
 import 'package:hive_flutter/adapters.dart';
-/*
-void main() async {
-  WidgetsFlutterBinding.ensureInitialized();
 
-  /// hive initialisation
-  await Hive.initFlutter();
-  await Hive.openBox('task_box');
-  runApp(MaterialApp(
-    home: review(),
-  ));
-}
-*/
+// void main() async {
+//   WidgetsFlutterBinding.ensureInitialized();
+//
+//   /// hive initialisation
+//   await Hive.initFlutter();
+//   await Hive.openBox('task_box');
+//   runApp(MaterialApp(
+//     home: review(),
+//   ));
+// }
+
 
 class review extends StatefulWidget{
   @override

@@ -314,7 +314,8 @@ class _PlantDetailsPageState extends State<PlantDetailsPage> {
           title: Text(widget.name),
         ),
         body:
-        *//*ListView.builder(itemBuilder: (context, index) {
+        */
+/*ListView.builder(itemBuilder: (context, index) {
           var movie = movies[index];
           return Card(
             key: ValueKey(movie.title),
@@ -336,7 +337,8 @@ class _PlantDetailsPageState extends State<PlantDetailsPage> {
               ),
             ),
           );
-        }),*//*Column(mainAxisAlignment: MainAxisAlignment.center, children: [
+        }),*/
+/*Column(mainAxisAlignment: MainAxisAlignment.center, children: [
           Image.network(
             widget.image,
             width: 250,

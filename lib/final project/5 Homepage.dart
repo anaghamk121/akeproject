@@ -1,9 +1,5 @@
-import 'package:convex_bottom_bar/convex_bottom_bar.dart';
-import 'package:device_preview/device_preview.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:hive/hive.dart';
-import 'package:hive_flutter/adapters.dart';
 import '10 Account .dart';
 import '11 review page.dart';
 import '12 notification page.dart';

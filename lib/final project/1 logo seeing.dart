@@ -4,8 +4,11 @@ import 'package:flutter/material.darT';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
 import 'package:hive/hive.dart';
 import 'package:hive_flutter/adapters.dart';
+import 'package:provider/provider.dart';
+import '../main.dart';
 import '2 get started.dart';
 import '3 login model.dart';
+import '7 provider.dart';
 
 void main()async  {
   WidgetsFlutterBinding.ensureInitialized();
@@ -13,13 +16,13 @@ void main()async  {
   Hive.registerAdapter(UserAdapter() as TypeAdapter);
   Hive.openBox<User>('user');
   await Hive.openBox('task_box');
-  runApp(
-      GetMaterialApp(
+  runApp( ChangeNotifierProvider(create: (_) => MovieProvider(),
+      child: GetMaterialApp(
             // useInheritedMediaQuery: true,
             // debugShowCheckedModeBanner: false,
             home: photo(),
             theme: ThemeData(),
-          ));
+          )));
 }
 
 class photo extends StatefulWidget {

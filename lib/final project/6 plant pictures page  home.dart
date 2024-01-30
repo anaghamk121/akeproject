@@ -5,11 +5,11 @@ import '6 plant card.dart';
 import '7 provider.dart';
 import '7 wishlist.dart';
 
-
-void main() {
-  runApp(
-      ChangeNotifierProvider(create: (_) => MovieProvider(), child: MyApp()));
-}
+//
+// void main() {
+//   runApp(
+//       ChangeNotifierProvider(create: (_) => MovieProvider(), child: MyApp()));
+// }
 
 
 class MyApp extends StatefulWidget {

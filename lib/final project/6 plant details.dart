@@ -116,7 +116,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.darT';
 import 'package:provider/provider.dart';
-
 import '7 provider.dart';
 import '7 wishlist.dart';
 

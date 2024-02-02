@@ -1,7 +1,5 @@
-import 'package:device_preview/device_preview.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.darT';
-
 import '2 getstart button.dart';
 
 class start extends StatelessWidget {

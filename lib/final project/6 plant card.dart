@@ -1,5 +1,4 @@
 import 'package:flutter/material.darT';
-
 import '6 plant details.dart';
 
 class PlantCard extends StatefulWidget {

@@ -1,15 +1,18 @@
+/*
 
 import 'package:akeproject/uI/search%20page.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 
+*/
 /*void main(){
   runApp(DevicePreview(builder: (BuildContext context)=>
   MaterialApp(useInheritedMediaQuery: true,
   debugShowCheckedModeBanner: false,
   home: plantphoto(),)));
-}*/
+}*//*
+
 class plantphoto extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
@@ -47,4 +50,5 @@ class plantphoto extends StatelessWidget{
       ),
       )
     );
-}}
+}}*/
+// main

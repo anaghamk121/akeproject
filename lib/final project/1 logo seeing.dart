@@ -16,7 +16,7 @@ void main()async  {
   Hive.registerAdapter(UserAdapter() as TypeAdapter);
   Hive.openBox<User>('user');
   await Hive.openBox('task_box');
-  runApp( ChangeNotifierProvider(create: (_) => MovieProvider(),
+  runApp( ChangeNotifierProvider(create: (_) => PlantProvider(),
       child: GetMaterialApp(
             // useInheritedMediaQuery: true,
             // debugShowCheckedModeBanner: false,

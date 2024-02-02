@@ -1,3 +1,4 @@
+/*
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.darT';
 
@@ -13,4 +14,4 @@ class wishlist extends StatelessWidget{
       body: Image(image: NetworkImage("https://hips.hearstapps.com/hmg-prod/images/screenshot-2023-06-13-at-1-52-12-pm-6488ad58e6ee6.png?crop=1xw:1xh;center,top&resize=980:*"),),
     );
 
-}}
+}}*/

@@ -1,3 +1,4 @@
+/*
 
 import 'package:akeproject/uI/wish%20list.dart';
 import 'package:flutter/cupertino.dart';
@@ -5,6 +6,7 @@ import 'package:flutter/material.dart';
 
 import 'last page.dart';
 
+*/
 /*
 void main() {
   runApp(DevicePreview(
@@ -14,7 +16,8 @@ void main() {
             home: searchpage(),
           )));
 }
-*/
+*//*
+
 class searchpage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -87,3 +90,5 @@ class searchpage extends StatelessWidget {
           ]));
   }
 }
+*/
+//wishlist

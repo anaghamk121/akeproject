@@ -1,15 +1,15 @@
 import 'package:akeproject/final%20project/7%20model.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import '6 plant data.dart';
 import '6 plant card.dart';
 import '7 provider.dart';
-import '7 wishlist.dart';
 
-//
-// void main() {
-//   runApp(
-//       ChangeNotifierProvider(create: (_) => MovieProvider(), child: MyApp()));
-// }
+
+void main() {
+  runApp(
+      ChangeNotifierProvider(create: (_) => PlantProvider(), child: MyApp()));
+}
 
 
 class MyApp extends StatefulWidget {
@@ -45,7 +45,7 @@ class PlantList extends StatefulWidget {
 }
 
 class _PlantListState extends State<PlantList> {
-  List<Map<String, dynamic>> plants = [
+ /* List<Map<String, dynamic>> plants = [
     {
       'name': 'Aglaonema Queen Plant',
       "scientificname": "Aglaonema modestum",
@@ -139,7 +139,7 @@ class _PlantListState extends State<PlantList> {
           "https://www.ugaoo.com/cdn/shop/products/Krish12Planter-Ivory_3f18466a-68f8-4763-8a18-fe58269b0f6a.jpg?v=1681551837&width=375",
     },
     // Add more plant data
-  ];
+  ];*/
 
   List<String> wishlist = [];
   List<Map<String, dynamic>> cart = [];

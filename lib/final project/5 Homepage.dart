@@ -68,7 +68,7 @@ class _mainscreenState extends State<mainscreen> {
             IconButton(
                 onPressed: () {
                   Navigator.push(context,
-                      MaterialPageRoute(builder: (context) =>  providerwishlist()));
+                      MaterialPageRoute(builder: (context) =>  Wishlist()));
                 },
                 icon: Icon(
                   Icons.favorite,

@@ -1,4 +1,6 @@
-List<Map<String, dynamic>> plants = [
+/*
+
+List<Map<String, dynamic>> data = [
   {
     'id': '1',
     'name': 'Aglaonema Queen Plant',
@@ -103,3 +105,4 @@ List<Map<String, dynamic>> plants = [
   },
   // Add more plant data
 ];
+*/

@@ -28,35 +28,38 @@ class MovieProvider with ChangeNotifier {
 }*/
 
 
+import 'dart:math';
 
-
+import 'package:akeproject/final%20project/6%20plant%20data.dart';
 import 'package:flutter/cupertino.dart';
-
-
 import '7 model.dart';
-
 final List<Map<String, dynamic>> data=[];
 
+/*
+final List<Plant> data = PlantCard(
+  name: '', price:  '', image: '', details: '', scientificname: '', isWishlist: ,
+  onToggleWishlist: () {  }, isInCart: , onToggleCart: () {  },) as List<Plant>;
+*/
 /*generate(
     100,
         (index) => Plant(
         title: "Plant $index", time: "${Random().nextInt(100) + 60} minute")); // random value aaytan time
 */
-class PlantProvider with ChangeNotifier {  // with is a keyword
-  final List<Plant> movieHome = data.cast<Plant>(); // moviehome list create cheyth ,data ne edth vech
 
-  List<Plant> get movies => movieHome;   // retrive all the movies,kitye value ne get cheyan, moviehome le value movieslek kitan
-  //final List<Plant> wishlist = []; // wishlist enna empty list vech
-  List<String> wishlist = [];
-  List<String> get wishplant => wishlist;
+class PlantProvider with ChangeNotifier {
+  final List<Plant> plantHome = data.cast<Plant>();
+  List<Plant> get movies => plantHome;
+  final List<Plant> wishlist = [];
+
+  List<Plant> get wishplant => wishlist;
 
 
-  void addToList(Plant plant) {  //add akan,model class ne vilich, wishlistlek add akan
-    wishlist.add(plant as String);
-    notifyListeners();  // data add cheythal aa screenil thenne change veran
+  void addToList(Plant plant) {
+    wishlist.add(plant);
+    notifyListeners();
   }
 
-  void removeFromList(Plant plant) { //wishlistnn remove cheyan, or fav nn remove aakan
+  void removeFromList(Plant plant) {
     wishlist.remove(plant);
     notifyListeners();
   }

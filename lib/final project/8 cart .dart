@@ -213,3 +213,49 @@
 //             ])));
 //   }
 // }
+
+
+
+
+/*
+
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.darT';
+import 'package:provider/provider.dart';
+import '8 cart model.dart';
+import '8 cart provider.dart';
+
+class cart extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    var cart = context.watch<CartProvider>().wishplant;
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(
+            "My Wishlist (${cart.length})"), //add aye data nte count or no koode appbarlek verum
+      ),
+      body: GridView.builder(
+          gridDelegate:
+          SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
+          itemCount: cart.length,
+          // wishlist nte countmovie lek edth vechu
+          itemBuilder: (context, index) {
+            final plant = cart[index]; //
+            return Card(
+              key: ValueKey(plant.title),
+              child: ListTile(
+                title: Text(plant.title),
+                trailing: TextButton(
+                  onPressed: () {
+                    context.read<CartProvider>().removeFromList(
+                        plant as Cart); // add ayeth remove aakan
+                  },
+                  child: Text("Remove"),
+                ),
+              ),
+            );
+          }),
+    );
+  }
+}
+*/

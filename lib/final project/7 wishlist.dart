@@ -98,11 +98,11 @@ import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.darT';
 import 'package:provider/provider.dart';
 import '7 provider.dart';
-
-/*void main() {
+/*
+void main() {
   runApp(DevicePreview(
-      builder: (BuildContext context) => MaterialApp(
-            home: providerwishlist(),
+      builder: (BuildContext context) => MaterialApp(useInheritedMediaQuery: true,
+            home:Wishlist(),
           )));
 }*/
 

@@ -5,7 +5,7 @@ import '11 review page.dart';
 import '12 notification page.dart';
 import '6 plant pictures page  home.dart';
 import '7 wishlist.dart';
-import '8 cart page.dart';
+import '8 cart .dart';
 import '9 tools page.dart';
 
 //

@@ -26,10 +26,6 @@ class _notificationState extends State<notification> {
         SliverAppBar(
             title: Row(
           children: [
-           /* IconButton(
-              onPressed: () {},
-              icon: Icon(Icons.arrow_back),
-            ),*/
             Text("Notification")
           ],
         )),

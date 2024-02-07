@@ -7,6 +7,9 @@ class Movie {
 
 class Plant {
   final String title;
- // final String ? time;
-  Plant ({required this. title,}); // title nn required aayit koduth
+
+  // final String ? time;
+  Plant({
+    required this.title,
+  }); // title nn required aayit koduth
 }

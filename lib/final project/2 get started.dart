@@ -19,15 +19,23 @@ class start extends StatelessWidget {
                 .textTheme
                 .headlineSmall!
                 .copyWith(color: Colors.white, fontWeight: FontWeight.w700),
-          ),SizedBox(height: 16,
+          ),
+          SizedBox(
+            height: 16,
             child: Text(
               "beauty blooms in the heart as well as garden",
-              style: Theme.of(context)
-                  .textTheme
-                  .bodySmall!
-                  .copyWith(color: Colors.white,),
+              style: Theme.of(context).textTheme.bodySmall!.copyWith(
+                    color: Colors.white,
+                  ),
             ),
-          ),SizedBox(height: 40,),Align(alignment: Alignment.center,child: GetStartedButton(),)
+          ),
+          SizedBox(
+            height: 40,
+          ),
+          Align(
+            alignment: Alignment.center,
+            child: GetStartedButton(),
+          )
         ],
       ),
       body: Container(
@@ -38,7 +46,6 @@ class start extends StatelessWidget {
           image: AssetImage("images/img.png"),
         )),
       ),
-
     );
   }
 }

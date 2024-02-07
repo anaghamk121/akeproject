@@ -13,7 +13,7 @@ void main() {
             home: providerwishlist(),
           )));
 }
-*//*
+*/ /*
 
 
 
@@ -93,7 +93,6 @@ class _favoriteState extends State<favorite> {
 }
 */
 
-
 import 'package:akeproject/final%20project/7%20model.dart';
 import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.darT';
@@ -107,15 +106,20 @@ import '7 provider.dart';
           )));
 }*/
 
-class   Wishlist extends StatelessWidget {
+class Wishlist extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var wishlist = context.watch<PlantProvider>().wishplant;
     return Scaffold(
       appBar: AppBar(
-        title: Text("My Wishlist (${wishlist.length})"), //add aye data nte count or no koode appbarlek verum
+        title: Text(
+            "My Wishlist (${wishlist.length})"), //add aye data nte count or no koode appbarlek verum
       ),
-      body: GridView.builder(gridDelegate:SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),itemCount: wishlist.length, // wishlist nte countmovie lek edth vechu
+      body: GridView.builder(
+          gridDelegate:
+              SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
+          itemCount: wishlist.length,
+          // wishlist nte countmovie lek edth vechu
           itemBuilder: (context, index) {
             final plant = wishlist[index]; //
             return Card(
@@ -124,7 +128,8 @@ class   Wishlist extends StatelessWidget {
                 title: Text(plant.title),
                 trailing: TextButton(
                   onPressed: () {
-                    context.read<PlantProvider>().removeFromList(plant as Plant); // add ayeth remove aakan
+                    context.read<PlantProvider>().removeFromList(
+                        plant as Plant); // add ayeth remove aakan
                   },
                   child: Text("Remove"),
                 ),

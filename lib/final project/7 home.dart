@@ -201,38 +201,46 @@ class providerhome extends StatelessWidget {
             child: Column(children: [
               ElevatedButton.icon(
                   onPressed: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => Wishlist()));
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => Wishlist()));
                   },
                   icon: Icon(Icons.favorite),
                   label: Text("Go to wishlist ${plantdata.length}")),
-              SizedBox(height: 20,),
+              SizedBox(
+                height: 20,
+              ),
               Expanded(
                 child: Center(
                   child: Padding(
                     padding: EdgeInsets.all(8.0),
-                    child: GridView.builder(gridDelegate:SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),itemBuilder :(context, index) {
-                      var plant = indoorplants[index];
-                      return Card(
-                          key: ValueKey(plant.title), // title vilichal data kitm , single widget ne monitor cheyan aan value key use cheyyunneth
-                          child: ListTile(
-                            title: Text(plant.title),
-                           // subtitle: Text(plant.time ?? "No time"),
-                            trailing: IconButton(
-                              icon: Icon(Icons.favorite_border),
-                              color: plantdata.contains(plant)
-                                  ? Colors.red
-                                  : Colors.black87,
-                              onPressed: () {
-                                if (!plantdata.contains(plant)) { //contain cheynn illenkil
-                                  context.read<PlantProvider>().addToList(plant); // add cheythal aan change notify cheya,
-                                } else {
-                                  context.read<PlantProvider>().removeFromList(plant);
-                                }
-                              },
-                            ),/*leading:  IconButton(
+                    child: GridView.builder(
+                        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                            crossAxisCount: 2),
+                        itemBuilder: (context, index) {
+                          var plant = indoorplants[index];
+                          return Card(
+                              key: ValueKey(plant.title),
+                              // title vilichal data kitm , single widget ne monitor cheyan aan value key use cheyyunneth
+                              child: ListTile(
+                                title: Text(plant.title),
+                                // subtitle: Text(plant.time ?? "No time"),
+                                trailing: IconButton(
+                                  icon: Icon(Icons.favorite_border),
+                                  color: plantdata.contains(plant)
+                                      ? Colors.red
+                                      : Colors.black87,
+                                  onPressed: () {
+                                    if (!plantdata.contains(plant)) {
+                                      //contain cheynn illenkil
+                                      context.read<PlantProvider>().addToList(
+                                          plant); // add cheythal aan change notify cheya,
+                                    } else {
+                                      context
+                                          .read<PlantProvider>()
+                                          .removeFromList(plant);
+                                    }
+                                  },
+                                ), /*leading:  IconButton(
     icon: Icon(Icons.shopping_cart),
     color: plantdata.contains(plant)
     ? Colors.red
@@ -243,9 +251,11 @@ class providerhome extends StatelessWidget {
     } else {
     context.read<PlantProvider>().removeFromList(plant);
     }})*/
-                          ) );
-                    }),
+                              ));
+                        }),
                   ),
-                ),),
-            ])));}
+                ),
+              ),
+            ])));
+  }
 }

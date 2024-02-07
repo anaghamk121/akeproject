@@ -157,30 +157,30 @@ class _PlantDetailsPageState extends State<PlantDetailsPage> {
         appBar: AppBar(
           title: Text(widget.name),
         ),
-        body:
-
-            Expanded(
-              child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
-                        Image.network(
+        body: Expanded(
+          child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
+            Image.network(
               widget.image,
               width: 250,
               height: 300,
               fit: BoxFit.cover,
-                        ),
-                        SizedBox(height: 16),
-                        Text(widget.name, style: TextStyle(fontSize: 24)),
-                        SizedBox(height: 8),
-                        Text('\$${widget.price}', style: TextStyle(fontSize: 18)),
-                Text(
+            ),
+            SizedBox(height: 16),
+            Text(widget.name, style: TextStyle(fontSize: 24)),
+            SizedBox(height: 8),
+            Text('\$${widget.price}', style: TextStyle(fontSize: 18)),
+            Text(
               widget.scientificname,
               style: TextStyle(fontSize: 15),
-                        ),
-                        Text(widget.details, style: TextStyle(fontSize: 16)),
-                        SizedBox(height: 30),
-                        Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+            ),
+            Text(widget.details, style: TextStyle(fontSize: 16)),
+            SizedBox(height: 30),
+            Row(mainAxisAlignment: MainAxisAlignment.center, children: [
               IconButton(
                 icon: Icon(
-                  widget.isInCart ? Icons.shopping_cart : Icons.add_shopping_cart,
+                  widget.isInCart
+                      ? Icons.shopping_cart
+                      : Icons.add_shopping_cart,
                   color: widget.isInCart ? Colors.blue : null,
                 ),
                 onPressed: widget.onToggleCart,
@@ -192,22 +192,20 @@ class _PlantDetailsPageState extends State<PlantDetailsPage> {
                 ),
                 onPressed: widget.onToggleWishlist,
               )
-                        ]),
-                        Padding(
+            ]),
+            Padding(
               padding: const EdgeInsets.only(top: 50),
               child: ElevatedButton.icon(
                   onPressed: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => Wishlist()));
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => Wishlist()));
                   },
                   icon: Icon(Icons.favorite),
                   label:
                       //Text( onToggleWishlist.(plants[index])? "Remove":"Add",style: TextStyle(color: Colors.black),),
                       Text("Go to wishlist ${plantdata.length}")),
-                        ),
-                      ]),
-            ));
+            ),
+          ]),
+        ));
   }
 }

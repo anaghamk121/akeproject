@@ -7,6 +7,7 @@ import '6 plant pictures page  home.dart';
 import '7 wishlist.dart';
 import '8 cart page.dart';
 import '9 tools page.dart';
+
 //
 // void main() async {
 //   WidgetsFlutterBinding.ensureInitialized();
@@ -28,119 +29,142 @@ class mainscreen extends StatefulWidget {
 }
 
 class _mainscreenState extends State<mainscreen> {
-  var screen=[
+  var screen = [
     HomePage(),
     tools(),
     //review(),
     //cart(),
-  //profile(),
+    //profile(),
   ];
-   int index=1;
+  int index = 1;
+
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
-      body: CustomScrollView(slivers: [
-        SliverAppBar(
-          // expandedHeight: 150,
-          backgroundColor: Colors.white,
-          //floating: true,
-          //pinned: true,
-          actions: [
-            Padding(
-              padding: const EdgeInsets.only(right: 260),
-              child: IconButton(
-                  onPressed: () {},
-                  icon: Icon(
-                    Icons.arrow_back,
-                    color: Colors.black87,
-                  )),
-            ),
-            IconButton(
-                onPressed: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => notification()));
-                },
-                icon: Icon(
-                  Icons.notification_add,
-                  color: Colors.green,
-                )),
-            IconButton(
-                onPressed: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) =>  Wishlist()));
-                },
-                icon: Icon(
-                  Icons.favorite,
-                  color: Colors.green,
-                ))
-          ],
-          bottom: AppBar(
-            elevation: 0,
+        body: CustomScrollView(slivers: [
+          SliverAppBar(
+            // expandedHeight: 150,
             backgroundColor: Colors.white,
-            title: Container(
-              decoration: BoxDecoration(
-                  color: Colors.green[700],
-                  borderRadius: BorderRadiusDirectional.circular(150)),
-              child: TextField(
-                decoration: InputDecoration(
-                    hintText: "Find your buddy",
-                    border: InputBorder.none,
-                    suffixIcon: Icon(
-                      Icons.keyboard_voice_outlined,
-                      color: Colors.white,
-                    ),
+            //floating: true,
+            //pinned: true,
+            actions: [
+              Padding(
+                padding: const EdgeInsets.only(right: 260),
+                child: IconButton(
+                    onPressed: () {},
                     icon: Icon(
-                      Icons.search,
-                      color: Colors.white,
+                      Icons.arrow_back,
+                      color: Colors.black87,
                     )),
+              ),
+              IconButton(
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => notification()));
+                  },
+                  icon: Icon(
+                    Icons.notification_add,
+                    color: Colors.green,
+                  )),
+              IconButton(
+                  onPressed: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => Wishlist()));
+                  },
+                  icon: Icon(
+                    Icons.favorite,
+                    color: Colors.green,
+                  ))
+            ],
+            bottom: AppBar(
+              elevation: 0,
+              backgroundColor: Colors.white,
+              title: Container(
+                decoration: BoxDecoration(
+                    color: Colors.green[700],
+                    borderRadius: BorderRadiusDirectional.circular(150)),
+                child: TextField(
+                  decoration: InputDecoration(
+                      hintText: "Find your buddy",
+                      border: InputBorder.none,
+                      suffixIcon: Icon(
+                        Icons.keyboard_voice_outlined,
+                        color: Colors.white,
+                      ),
+                      icon: Icon(
+                        Icons.search,
+                        color: Colors.white,
+                      )),
+                ),
               ),
             ),
           ),
-        ), SliverList(
-        delegate: SliverChildListDelegate(
-          [
+          SliverList(
+              delegate: SliverChildListDelegate([
             Column(
               children: [
                 screen[index],
               ],
-
-            )]
-
-        )
-        )]),
+            )
+          ]))
+        ]),
         bottomNavigationBar: BottomNavigationBar(
           backgroundColor: Colors.green[700],
           type: BottomNavigationBarType.shifting,
           selectedItemColor: Colors.blueGrey,
           unselectedItemColor: Colors.black12,
           currentIndex: index,
-          onTap: (tapindex){
+          onTap: (tapindex) {
             setState(() {
-              index=tapindex;
-            }
-            );
+              index = tapindex;
+            });
           },
           items: [
-            BottomNavigationBarItem(icon: IconButton(onPressed: ()
-            {Navigator.push(context, MaterialPageRoute(builder: (BuildContext context)=>HomePage()));},
-              icon:Icon( Icons.home_rounded),),label: "home",
+            BottomNavigationBarItem(
+                icon: IconButton(
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (BuildContext context) => HomePage()));
+                  },
+                  icon: Icon(Icons.home_rounded),
+                ),
+                label: "home",
                 backgroundColor: Colors.green),
-            BottomNavigationBarItem(icon: IconButton(onPressed: ()
-            {Navigator.push(context, MaterialPageRoute(builder: (BuildContext context)=> review()));},
-              icon:Icon( Icons.add),),label: "Review",
+            BottomNavigationBarItem(
+                icon: IconButton(
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (BuildContext context) => review()));
+                  },
+                  icon: Icon(Icons.add),
+                ),
+                label: "Review",
                 backgroundColor: Colors.green),
-          /*  BottomNavigationBarItem(icon: IconButton(onPressed: ()
+            /*  BottomNavigationBarItem(icon: IconButton(onPressed: ()
             {Navigator.push(context, MaterialPageRoute(builder: (BuildContext context)=>cart()));},
               icon:Icon( Icons.shopping_cart),),label: "Cart",
                 backgroundColor: Colors.green),*/
-            BottomNavigationBarItem(icon: IconButton(onPressed: ()
-            {Navigator.push(context, MaterialPageRoute(builder: (BuildContext context)=>Profile()));},
-              icon:Icon( Icons.account_circle),),label: "Profile",
+            BottomNavigationBarItem(
+                icon: IconButton(
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (BuildContext context) => Profile()));
+                  },
+                  icon: Icon(Icons.account_circle),
+                ),
+                label: "Profile",
                 backgroundColor: Colors.green),
           ],
         )
-      /*bottomNavigationBar: ConvexAppBar(
+        /*bottomNavigationBar: ConvexAppBar(
         style: TabStyle.react,
 
         backgroundColor: Colors.green[800],
@@ -154,6 +178,6 @@ class _mainscreenState extends State<mainscreen> {
         initialActiveIndex: 1,
         onTap: (int i) => print('click index=$i'),
       ),*/
-    );
+        );
   }
 }

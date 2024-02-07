@@ -3,7 +3,7 @@ import 'package:hive_flutter/hive_flutter.dart';
 part 'login model.g.dart';
 
 @HiveType(typeId: 1)
-class User{
+class User {
   @HiveField(0)
   final String email;
 
@@ -13,7 +13,7 @@ class User{
   @HiveField(2)
   String? id;
 
-  User ({required this.email , required this.password }){
-    id= DateTime.now().microsecondsSinceEpoch.toString();
+  User({required this.email, required this.password}) {
+    id = DateTime.now().microsecondsSinceEpoch.toString();
   }
 }

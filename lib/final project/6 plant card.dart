@@ -23,12 +23,14 @@ class PlantCard extends StatefulWidget {
     required this.isInCart,
     required this.onToggleCart,
   });
+
   @override
   State<PlantCard> createState() => _PlantCardState();
 }
 
 class _PlantCardState extends State<PlantCard> {
-  List<String> wishlist=[];
+  List<String> wishlist = [];
+
   @override
   Widget build(BuildContext context) {
     return Card(

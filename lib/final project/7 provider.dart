@@ -27,13 +27,13 @@ class MovieProvider with ChangeNotifier {
   }
 }*/
 
-
 import 'dart:math';
 
 import 'package:akeproject/final%20project/6%20plant%20data.dart';
 import 'package:flutter/cupertino.dart';
 import '7 model.dart';
-final List<Map<String, dynamic>> data=[];
+
+final List<Map<String, dynamic>> data = [];
 
 /*
 final List<Plant> data = PlantCard(
@@ -48,11 +48,11 @@ final List<Plant> data = PlantCard(
 
 class PlantProvider with ChangeNotifier {
   final List<Plant> plantHome = data.cast<Plant>();
+
   List<Plant> get movies => plantHome;
   final List<Plant> wishlist = [];
 
   List<Plant> get wishplant => wishlist;
-
 
   void addToList(Plant plant) {
     wishlist.add(plant);

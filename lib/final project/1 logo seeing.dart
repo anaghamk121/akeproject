@@ -10,19 +10,20 @@ import '2 get started.dart';
 import '3 login model.dart';
 import '7 provider.dart';
 
-void main()async  {
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Hive.initFlutter();
   Hive.registerAdapter(UserAdapter() as TypeAdapter);
   Hive.openBox<User>('user');
   await Hive.openBox('task_box');
-  runApp( ChangeNotifierProvider(create: (_) => PlantProvider(),
+  runApp(ChangeNotifierProvider(
+      create: (_) => PlantProvider(),
       child: GetMaterialApp(
-            // useInheritedMediaQuery: true,
-            // debugShowCheckedModeBanner: false,
-            home: photo(),
-            theme: ThemeData(),
-          )));
+        // useInheritedMediaQuery: true,
+        // debugShowCheckedModeBanner: false,
+        home: photo(),
+        theme: ThemeData(),
+      )));
 }
 
 class photo extends StatefulWidget {
@@ -46,10 +47,8 @@ class _photoState extends State<photo> {
     return Scaffold(
       backgroundColor: Colors.white,
       body: Center(
-        child: Image(image: AssetImage("images/greenega logo.png"),
-         /* image: NetworkImage(
-            "https://png.pngtree.com/template/20191024/ourmid/pngtree-flower-pot-and-plant-logo-growth-vector-logo-image_322946.jpg",
-          ),*/
+        child: Image(
+          image: AssetImage("images/greenega logo.png"),
         ),
       ),
     );

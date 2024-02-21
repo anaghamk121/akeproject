@@ -4,7 +4,10 @@ import 'package:flutter/material.darT';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
 import 'package:hive/hive.dart';
 import 'package:hive_flutter/adapters.dart';
+import 'package:provider/provider.dart';
 import '../model/loginmodel.dart';
+import '../providers/cart provider.dart';
+import '../providers/wishlist provider.dart';
 import 'get started.dart';
 
 
@@ -14,16 +17,23 @@ void main() async {
   Hive.registerAdapter(UserAdapter() as TypeAdapter);
   Hive.openBox<User>('user');
   await Hive.openBox('task_box');
-  runApp(
+  runApp(MultiProvider(
+      providers: [ ChangeNotifierProvider(
+          create: (BuildContext context) => Plants()),
+        ChangeNotifierProvider(
+            create: (BuildContext context) => Cart()),],
+        /*child: ChangeNotifierProvider(
+      create: (BuildContext context) => Plants(),*/
+
     //  ChangeNotifierProvider(
      // create: (_) => PlantProvider(),
      // child:
-      GetMaterialApp(
+     child: GetMaterialApp(
         // useInheritedMediaQuery: true,
         // debugShowCheckedModeBanner: false,
         home: photo(),
         theme: ThemeData(),
-      ));
+      )));
 }
 
 class photo extends StatefulWidget {

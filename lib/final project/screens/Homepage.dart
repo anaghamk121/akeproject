@@ -1,8 +1,11 @@
 import 'package:akeproject/final%20project/screens/review%20page.dart';
+import 'package:akeproject/final%20project/screens/wishlist.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import 'Account .dart';
+import 'main shopping screen.dart';
+import 'notification.dart';
 
 //
 // void main() async {
@@ -67,7 +70,7 @@ class _mainscreenState extends State<mainscreen> {
               IconButton(
                   onPressed: () {
                     Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => Wishlist()));
+                        MaterialPageRoute(builder: (context) => wishlist()));
                   },
                   icon: Icon(
                     Icons.favorite,
@@ -124,7 +127,7 @@ class _mainscreenState extends State<mainscreen> {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (BuildContext context) => HomePage()));
+                            builder: (BuildContext context) => mainshoppingscreen()));
                   },
                   icon: Icon(Icons.home_rounded),
                 ),

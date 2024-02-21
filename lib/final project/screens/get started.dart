@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.darT';
 
-import '../heper/getstart button.dart';
+import '../helper/getstart button.dart';
 
 
 class start extends StatelessWidget {

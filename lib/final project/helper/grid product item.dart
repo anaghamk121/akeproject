@@ -15,6 +15,7 @@ class gridproductitem extends StatelessWidget {
   Widget build(BuildContext context) {
     //  final plant = Provider.of<Plant>(context);
     return Consumer<Plant>(builder: (context, plant, _) {
+
       return ClipRRect(
         borderRadius: BorderRadius.circular(18),
         child: GridTile(
@@ -34,15 +35,19 @@ class gridproductitem extends StatelessWidget {
               },
             ),
             trailing: IconButton(
-              icon: Icon(Icons.shopping_cart),
-              onPressed: () {},
+      onPressed: (){},
+              // icon:cart.iscart ? Icon(Icons.shopping_cart):Icon(Icons.shopping_cart_checkout),
+              // onPressed: () {
+              //   cart.toggleIsCart();
+               icon: Icon(Icons.shopping_cart_checkout),
             ),
           ),
           child: GestureDetector(
               onTap: () {
-                Navigator.of(context).pushNamed(
-                  detailspage.id,
-                  arguments: plant.id,
+                Navigator.push(context, MaterialPageRoute(builder: (context)=>detailspage())
+                 // Navigator.of(context).pushNamed(
+                 //  detailspage.id,
+                 //   arguments: plant.id,
                 );
               },
               child: Image.network(plant.image)),

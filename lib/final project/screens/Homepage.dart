@@ -1,8 +1,11 @@
+import 'package:akeproject/final%20project/helper/grid%20product%20item.dart';
+import 'package:akeproject/final%20project/screens/details%20page.dart';
 import 'package:akeproject/final%20project/screens/review%20page.dart';
 import 'package:akeproject/final%20project/screens/wishlist.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import '../providers/cart provider.dart';
 import 'Account .dart';
 import 'main shopping screen.dart';
 import 'notification.dart';
@@ -29,13 +32,15 @@ class mainscreen extends StatefulWidget {
 
 class _mainscreenState extends State<mainscreen> {
   var screen = [
-   // HomePage(),
-    //tools(),
+    mainshoppingscreen(),
+    detailspage(),
+    gridproductitem(),
+   // wishlist(),
+    //Cart(),
     //review(),
-    //cart(),
-    //profile(),
-  ];
-  int index = 1;
+   // Profile()
+   ];
+  int index = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -70,7 +75,7 @@ class _mainscreenState extends State<mainscreen> {
               IconButton(
                   onPressed: () {
                     Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => wishlist()));
+                        MaterialPageRoute(builder: (context) => gridproductitem()));
                   },
                   icon: Icon(
                     Icons.favorite,
@@ -124,6 +129,9 @@ class _mainscreenState extends State<mainscreen> {
             BottomNavigationBarItem(
                 icon: IconButton(
                   onPressed: () {
+                    setState(() {
+                      index = 0;
+                    });
                     Navigator.push(
                         context,
                         MaterialPageRoute(
@@ -136,6 +144,9 @@ class _mainscreenState extends State<mainscreen> {
             BottomNavigationBarItem(
                 icon: IconButton(
                   onPressed: () {
+                    setState(() {
+                      index = 1;
+                    });
                     Navigator.push(
                         context,
                         MaterialPageRoute(
@@ -152,6 +163,9 @@ class _mainscreenState extends State<mainscreen> {
             BottomNavigationBarItem(
                 icon: IconButton(
                   onPressed: () {
+                    setState(() {
+                      index = 2;
+                    });
                     Navigator.push(
                         context,
                         MaterialPageRoute(

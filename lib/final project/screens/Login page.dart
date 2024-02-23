@@ -59,23 +59,24 @@ class _projloginState extends State<projlogin> {
             cursorColor: Colors.black87,
             controller: uname,
             obscureText: hidepass,
-            obscuringCharacter: "*",
+           // obscuringCharacter: "*",
             decoration: InputDecoration(
                 prefixIcon: const Icon(Icons.drive_file_rename_outline),
-                suffixIcon: IconButton(
-                  onPressed: () {
-                    setState(() {
-                      if (hidepass) {
-                        hidepass = false;
-                      } else {
-                        hidepass = true;
-                      }
-                    });
-                  },
-                  icon: Icon(hidepass == true
-                      ? Icons.visibility_off
-                      : Icons.visibility),
-                ),
+                // suffixIcon: IconButton(
+                //   onPressed: () {
+                //     setState(() {
+                //       if (hidepass) {
+                //         hidepass = false;
+                //       } else {
+                //         hidepass = true;
+                //       }
+                //     });
+                //   },
+                //   icon: Icon(
+                //       hidepass == true
+                //       ? Icons.visibility_off
+                //       : Icons.visibility),
+                // ),
                 labelText: "Email",
                 hintText: "Email",
                 border: OutlineInputBorder(

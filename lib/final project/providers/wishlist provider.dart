@@ -1,5 +1,4 @@
 import 'package:flutter/material.darT';
-
 import '../helper/wish product.dart';
 
 
@@ -105,12 +104,7 @@ class Plants with ChangeNotifier{
     return _indoorPlants.where((plant) => plant.isfavorite).toList();
   }
   List<Plant> get  indoorPlants => _indoorPlants;
-/*
- void addPlant(value){
-   indoorPlants.add(value);
-   notifyListeners();
- }*/
-  Plant findById(String id){
+Plant findById(String id){
     return _indoorPlants.firstWhere((plant) => plant.id == id);
   }
 }

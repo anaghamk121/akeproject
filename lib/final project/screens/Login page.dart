@@ -1,4 +1,3 @@
-
 //
 // void main() async {
 //   WidgetsFlutterBinding.ensureInitialized();
@@ -15,10 +14,10 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.darT';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
-
 import '../databse/login database.dart';
 import '../model/loginmodel.dart';
 import 'Homepage.dart';
+import 'main_screen.dart';
 
 class projlogin extends StatefulWidget {
   @override
@@ -59,7 +58,7 @@ class _projloginState extends State<projlogin> {
             cursorColor: Colors.black87,
             controller: uname,
             obscureText: hidepass,
-           // obscuringCharacter: "*",
+            // obscuringCharacter: "*",
             decoration: InputDecoration(
                 prefixIcon: const Icon(Icons.drive_file_rename_outline),
                 // suffixIcon: IconButton(

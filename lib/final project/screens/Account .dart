@@ -106,15 +106,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 
 import 'Login page.dart';
 import 'orders.dart';
-//
-// void main (){
-//   runApp(DevicePreview(builder: (BuildContext context)=>
-//       MaterialApp(useInheritedMediaQuery: true,debugShowCheckedModeBanner: false,
-//         home: Profile(),
-//       )
-//   )
-//   );
-// }
+
 class Profile extends StatefulWidget{
   @override
   State<Profile> createState() => _ProfileState();
@@ -204,3 +196,4 @@ class _ProfileState extends State<Profile> {
     );
   }
 }
+

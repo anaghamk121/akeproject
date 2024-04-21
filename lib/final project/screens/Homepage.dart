@@ -1,13 +1,10 @@
-import 'package:akeproject/final%20project/helper/grid%20product%20item.dart';
-import 'package:akeproject/final%20project/screens/details%20page.dart';
+import 'package:akeproject/final%20project/screens/main_screen.dart';
+import 'package:akeproject/final%20project/screens/plant_details_page.dart';
 import 'package:akeproject/final%20project/screens/review%20page.dart';
-import 'package:akeproject/final%20project/screens/wishlist.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-
-import '../providers/cart provider.dart';
+import '../providers/wishlist_provider.dart';
 import 'Account .dart';
-import 'main shopping screen.dart';
 import 'notification.dart';
 
 //
@@ -32,13 +29,8 @@ class mainscreen extends StatefulWidget {
 
 class _mainscreenState extends State<mainscreen> {
   var screen = [
-    mainshoppingscreen(),
-    detailspage(),
-    gridproductitem(),
-   // wishlist(),
-    //Cart(),
-    //review(),
-   // Profile()
+
+    WishlistPage(),
    ];
   int index = 0;
 
@@ -56,7 +48,7 @@ class _mainscreenState extends State<mainscreen> {
                 padding: const EdgeInsets.only(right: 260),
                 child: IconButton(
                     onPressed: () {},
-                    icon: Icon(
+                    icon: const Icon(
                       Icons.arrow_back,
                       color: Colors.black87,
                     )),
@@ -75,8 +67,8 @@ class _mainscreenState extends State<mainscreen> {
               IconButton(
                   onPressed: () {
                     Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => gridproductitem()));
-                  },
+                        MaterialPageRoute(builder: (context) => WishlistPage()));
+                   },
                   icon: Icon(
                     Icons.favorite,
                     color: Colors.green,
@@ -89,7 +81,7 @@ class _mainscreenState extends State<mainscreen> {
                 decoration: BoxDecoration(
                     color: Colors.green[700],
                     borderRadius: BorderRadiusDirectional.circular(150)),
-                child: TextField(
+                child: const TextField(
                   decoration: InputDecoration(
                       hintText: "Find your buddy",
                       border: InputBorder.none,
@@ -135,9 +127,9 @@ class _mainscreenState extends State<mainscreen> {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (BuildContext context) => mainshoppingscreen()));
+                            builder: (BuildContext context) => mainscreen() ));
                   },
-                  icon: Icon(Icons.home_rounded),
+                  icon: const Icon(Icons.home_rounded),
                 ),
                 label: "home",
                 backgroundColor: Colors.green),
@@ -152,7 +144,7 @@ class _mainscreenState extends State<mainscreen> {
                         MaterialPageRoute(
                             builder: (BuildContext context) => review()));
                   },
-                  icon: Icon(Icons.add),
+                  icon: const Icon(Icons.add),
                 ),
                 label: "Review",
                 backgroundColor: Colors.green),
